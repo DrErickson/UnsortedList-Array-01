@@ -28,18 +28,48 @@ bool UnsortedList::Contains(int someItem) {
     return false;
 }
 
+
 void UnsortedList::PutItem(int item) {
+
+    if (length >= MAX_ITEMS)
+        return;
+
+    info[length++] = item;
 
 }
 
 void UnsortedList::DeleteItem(int item) {
 
+    // find the item
+    for (int i = 0; i < length; i++) {
+        if (info[i] == item) {
+            info[i] = info[length - 1];
+            length--;
+            return;
+        }
+    }
+
+    /* BAAAAAD */
+    // find the item
+//    int i;
+//    for (i = 0; i < length; i++) {
+//        if (info[i] == item) {
+//            break;
+//        }
+//    }
+//
+//    info[i] = info[length - 1];
+//    length--;
 }
 
 void UnsortedList::ResetIterator() {
-
+    currentPos = -1;
 }
 
 int UnsortedList::GetNextItem() {
-    return 0;
+    if (currentPos >= length){
+        throw "Out of bounds";
+    }
+    currentPos++;
+    return info[currentPos];
 }

@@ -58,9 +58,6 @@ public:
 private:
   int length;
   int info[MAX_ITEMS];
-
-
-
   int currentPos;  // iterator
 };
 

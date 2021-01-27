@@ -54,6 +54,8 @@ int main()
 			inFile >> item;
 			//cin >> item;
 			list.PutItem(item);
+            cout << item;
+            cout << " is in list." << endl;
 			outFile << item;
 			outFile << " is in list." << endl;
 		}
@@ -62,6 +64,8 @@ int main()
 			//inFile >> item;
 			cin >> item;
 			list.DeleteItem(item);
+            cout << item;
+            cout << " is deleted." << endl;
 			outFile << item;
 			outFile << " is deleted." << endl;
 		}
@@ -125,7 +129,8 @@ void PrintList(ofstream& dataFile, UnsortedList& list)
 	int item;
 	dataFile << "PrintList" << endl;
 	cout << "PrintList: ";
-	list.ResetIterator();	// Sets currentPos = -1
+
+	list.ResetIterator();	         // Sets currentPos = -1
 	length = list.GetLength();
 	if (length == 0)
 		dataFile << "List is empty.";

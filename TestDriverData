@@ -6,10 +6,10 @@ PutItem 9
 PrintList
 PutItem 1
 PrintList
-GetItem 4
-GetItem 5
-GetItem 9
-GetItem 10
+Contains 4
+Contains 5
+Contains 9
+Contains 10
 IsFull
 DeleteItem 5
 IsFull
