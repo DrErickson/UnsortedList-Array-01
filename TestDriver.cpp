@@ -48,7 +48,7 @@ int main()
 	int numCommands = 0;
 	while (command != "Quit")
 	{
-		cout << "Command: " << command;
+		//cout << "Command: " << command;
 		if (command == "PutItem")
 		{
 			inFile >> item;
@@ -79,14 +79,21 @@ int main()
 			}
 		}
 		else if (command == "GetLength") {
+            cout << "Length is " << list.GetLength() << endl;
 			outFile << "Length is " << list.GetLength() << endl;
 		}
 		else if (command == "IsFull") {
-			if (list.IsFull())
-				outFile << "List is full." << endl;
-			else outFile << "List is not full." << endl;
+			if (list.IsFull()) {
+                cout << "List is full." << endl;
+                outFile << "List is full." << endl;
+            } else {
+                cout << "List is not full." << endl;
+                outFile << "List is not full." << endl;
+            }
 		}
 		else if (command == "MakeEmpty") {
+            cout << "Make list empty." << endl;
+            outFile << "Make list empty." << endl;
 			list.MakeEmpty();
 		}
 		else if (command == "PrintList") {
@@ -117,7 +124,7 @@ void PrintList(ofstream& dataFile, UnsortedList& list)
 	int length;
 	int item;
 	dataFile << "PrintList" << endl;
-	cout << ": ";
+	cout << "PrintList: ";
 	list.ResetIterator();	// Sets currentPos = -1
 	length = list.GetLength();
 	if (length == 0)
