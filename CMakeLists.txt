@@ -7,5 +7,4 @@ include_directories(.)
 
 add_executable(unsortedlist
         TestDriver.cpp
-        UnsortedList.cpp
         UnsortedList.h)
