@@ -61,8 +61,8 @@ int main()
 		}
 		else if (command == "DeleteItem")
 		{
-			//inFile >> item;
-			cin >> item;
+			inFile >> item;
+			//cin >> item;
 			list.DeleteItem(item);
             cout << item;
             cout << " is deleted." << endl;
